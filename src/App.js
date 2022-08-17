@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
+import Container from './components/Container/Container';
+import Header from './components/Header/Header';
+import SiteList from './components/SiteList/SiteList';
+
 import './App.css';
 
 function App() {
+  const [totalSites, setTotalSites] = useState(0);
+  const [offlineSites, setOfflineSites] = useState(0);
+  const [onlineSites, setOnlineSites] = useState(0);
+  const [unsafeSites, setUnsafeSites] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Container>
+          <Header 
+            totalSites={totalSites}
+            onlineSites={onlineSites}
+            offlineSites={offlineSites}
+            unsafeSites={unsafeSites}
+          />
+
+          <SiteList 
+            setTotalSites={setTotalSites}
+            setOfflineSites={setOfflineSites}
+            setOnlineSites={setOnlineSites}
+            setUnsafeSites={setUnsafeSites}
+          />
+        </Container>
+        
     </div>
   );
 }

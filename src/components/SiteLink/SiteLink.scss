@@ -1,0 +1,33 @@
+a {
+    text-decoration: none;
+
+    .site-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        color: #FFF;
+        background-color: #333;
+        font-weight: 400;
+        padding: 1rem;
+        margin: 1rem 1rem 1rem 0;
+        border-radius: 10px;
+        transition: transform 450ms;
+
+        &:hover {
+            transform: (scale(1.08));
+        }
+
+        .circle {
+            height: 20px;
+            width: 20px;
+            background-color: rgb(255, 0, 0);
+            display: inline-block;
+            border-radius: 50%;
+        }
+
+        .online {
+            background-color: rgb(0, 128, 0);
+        }
+    }
+}
